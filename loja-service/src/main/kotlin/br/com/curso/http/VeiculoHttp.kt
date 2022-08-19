@@ -7,7 +7,6 @@ import io.micronaut.http.client.annotation.Client
 
 @Client(id = "http://localhost:8080")
 interface VeiculoHttp {
-
     @Get("/veiculos/{id}")
     fun findById(@PathVariable id: Int): Veiculo
 }

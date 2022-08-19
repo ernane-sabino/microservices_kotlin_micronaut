@@ -1,3 +1,8 @@
 package br.com.curso.dto.output
 
-data class Parcelas()
+import java.math.BigDecimal
+
+data class Parcelas(
+    val valor: BigDecimal,
+    val dataVencimento: String
+)

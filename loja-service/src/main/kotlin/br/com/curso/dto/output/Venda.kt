@@ -1,3 +1,10 @@
 package br.com.curso.dto.output
 
-data class Venda()
+import java.math.BigDecimal
+
+data class Venda(
+    val cliente: String,
+    val veiculo: Veiculo,
+    val valor: BigDecimal,
+    val parcelas: List<Parcelas>
+)
