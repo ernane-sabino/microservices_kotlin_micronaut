@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: lojaService
+netty:
+  default:
+    allocator:
+      max-order: 3
