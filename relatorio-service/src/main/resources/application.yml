@@ -1,7 +1,14 @@
 micronaut:
   application:
     name: relatorioService
+  server:
+    port: 8082
 netty:
   default:
     allocator:
       max-order: 3
+kafka:
+  bootstrap:
+    servers: localhost:9092
+mongodb:
+  uri: 'mongodb://localhost:27017/vendas'
