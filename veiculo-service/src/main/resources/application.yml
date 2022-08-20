@@ -1,6 +1,8 @@
 micronaut:
   application:
     name: veiculoService
+  server:
+    port: -1
 datasources:
   default:
     url: jdbc:postgresql://127.0.0.1:5432/dbveiculo

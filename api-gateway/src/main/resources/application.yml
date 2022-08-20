@@ -1,6 +1,20 @@
 micronaut:
   application:
     name: apiGateway
+  server:
+    port: 9999
+  config-client:
+    enabled: true
+consul:
+  client:
+    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    registration:
+      enabled: true
+gateway:
+  services:
+    - veiculo-service
+    - loja-service
+    - relatorio-service
 netty:
   default:
     allocator:
