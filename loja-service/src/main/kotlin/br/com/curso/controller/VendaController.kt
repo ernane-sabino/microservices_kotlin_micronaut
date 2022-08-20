@@ -1,6 +1,7 @@
 package br.com.curso.controller
 
 import br.com.curso.dto.input.VendaInput
+import br.com.curso.dto.output.Venda
 import br.com.curso.service.VendaService
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
@@ -12,7 +13,7 @@ class VendaController(
 ) {
 
     @Post
-    fun realizarVenda(@Body vendaInput: VendaInput) {
+    fun realizarVenda(@Body vendaInput: VendaInput): Venda {
         return vendaService.realizarVenda(vendaInput)
     }
 }
