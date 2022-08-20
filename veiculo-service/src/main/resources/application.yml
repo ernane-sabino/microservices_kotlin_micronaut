@@ -18,3 +18,8 @@ jpa:
           auto: update
         show_sql: true
         format_sql: true
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "localhost:8500"

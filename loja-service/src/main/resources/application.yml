@@ -10,3 +10,8 @@ netty:
 kafka:
   bootstrap:
     servers: localhost:9092
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "localhost:8500"
