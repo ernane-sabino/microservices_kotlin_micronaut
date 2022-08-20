@@ -4,6 +4,7 @@ plugins {
     id("org.jetbrains.kotlin.plugin.allopen") version "1.6.21"
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("io.micronaut.application") version "3.5.1"
+    id("org.jetbrains.kotlin.plugin.noarg") version "1.4.10"
 }
 
 version = "0.1"
@@ -60,5 +61,8 @@ micronaut {
     }
 }
 
-
+noArg {
+    annotation("br.com.curso.model.NoArg")
+    invokeInitializers = true
+}
 

@@ -17,4 +17,8 @@ class VendaRepository(
     fun getConnection() = mongoClient
         .getDatabase("vendas")
         .getCollection("venda", Venda::class.java)
+
+    fun getAll(): List<Venda> {
+        return getConnection().find().toList()
+    }
 }

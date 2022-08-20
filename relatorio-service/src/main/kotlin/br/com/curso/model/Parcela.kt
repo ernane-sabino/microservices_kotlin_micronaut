@@ -2,7 +2,8 @@ package br.com.curso.model
 
 import java.math.BigDecimal
 
+@NoArg
 data class Parcela(
-    val valor: BigDecimal,
-    val dataVencimento: String
+    var valor: BigDecimal,
+    var dataVencimento: String
 )
