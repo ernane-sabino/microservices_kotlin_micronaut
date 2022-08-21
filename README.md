@@ -8,7 +8,7 @@
 
 Exemplo de solicitações utilizadas:
 
-Cadastro de novo veículo - Microsserviço Veículos
+* Cadastro de novo veículo - Microsserviço Veículos
 	- Requisição POST
 		- http://localhost:9090/veiculo-service/veiculos
 	- Dados da requisição:
@@ -18,11 +18,11 @@ Cadastro de novo veículo - Microsserviço Veículos
 			"placa": "string"
 		}
 
-Recuperação de veículos cadastrados - Microsserviço Veículos
+* Recuperação de veículos cadastrados - Microsserviço Veículos
 	- Requisição GET
 		- http://localhost:9090/veiculo-service/veiculos/{id}
 
-Efetuar uma venda - Microsserviço Loja
+* Efetuar uma venda - Microsserviço Loja
 	- Requisição POST
 		- http://localhost:9090/loja-service/vendas
 	- Dados da requisição:
@@ -34,11 +34,11 @@ Efetuar uma venda - Microsserviço Loja
 		}
 
 
-Listagem das vendas realizadas - Microsserviço Relatório
+* Listagem das vendas realizadas - Microsserviço Relatório
 	- Requisição GET
 		- http://localhost:9090/relatorio-service/vendas
 
-Todos os microsserviçoes e aplicações estão em uma rede docker.
+* Todos os microsserviçoes e aplicações estão em uma rede docker.
 
 ## Arquitetura de Microserviços
 
