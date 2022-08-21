@@ -12,11 +12,13 @@ Exemplo de solicitações utilizadas:
 	- Requisição POST
 		- http://localhost:9090/veiculo-service/veiculos
 	- Dados da requisição:
-		{
-			"marca": "string",
-			"modelo": "string",
-			"placa": "string"
-		}
+```
+{
+	"marca": "string",
+	"modelo": "string",
+	"placa": "string"
+}
+```
 
 * Recuperação de veículos cadastrados - Microsserviço Veículos
 	- Requisição GET
@@ -26,13 +28,14 @@ Exemplo de solicitações utilizadas:
 	- Requisição POST
 		- http://localhost:9090/loja-service/vendas
 	- Dados da requisição:
-		{
-			"cliente": "string",
-			"veiculo": int {id do veiculo},
-			"valor": decimal,
-			"quantidadeParcelas": int
-		}
-
+```
+{
+	"cliente": "string",
+	"veiculo": int {id do veiculo},
+	"valor": decimal,
+	"quantidadeParcelas": int
+}
+```
 
 * Listagem das vendas realizadas - Microsserviço Relatório
 	- Requisição GET
