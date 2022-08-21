@@ -14,7 +14,7 @@
 
 #### Cadastro de novo veículo - Microsserviço Veículos
 * Requisição POST
-	** http://localhost:9090/veiculo-service/veiculos
+	- http://localhost:9090/veiculo-service/veiculos
 * Dados da requisição:
 ```
 {
@@ -24,14 +24,14 @@
 }
 ```
 
-* Recuperação de veículos cadastrados - Microsserviço Veículos
-	- Requisição GET
-		- http://localhost:9090/veiculo-service/veiculos/{id}
+### Recuperação de veículos cadastrados - Microsserviço Veículos
+* Requisição GET
+	- http://localhost:9090/veiculo-service/veiculos/{id}
 
-* Efetuar uma venda - Microsserviço Loja
-	- Requisição POST
-		- http://localhost:9090/loja-service/vendas
-	- Dados da requisição:
+### Efetuar uma venda - Microsserviço Loja
+* Requisição POST
+	- http://localhost:9090/loja-service/vendas
+* Dados da requisição:
 ```
 {
 	"cliente": "string",
@@ -41,9 +41,9 @@
 }
 ```
 
-* Listagem das vendas realizadas - Microsserviço Relatório
-	- Requisição GET
-		- http://localhost:9090/relatorio-service/vendas
+### Listagem das vendas realizadas - Microsserviço Relatório
+* Requisição GET
+	- http://localhost:9090/relatorio-service/vendas
 
 ### Todos os microsserviçoes e aplicações estão em uma rede docker.
 
