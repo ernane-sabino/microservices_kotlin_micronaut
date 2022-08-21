@@ -1,10 +1,10 @@
 ## Sobre este projeto
 
-* Ao realizar uma venda, o microsserviço de loja se comunica com o microsserviço de veículos que recupera o veículo de um banco de dados PostgreSQL
-* Foi implementado um circuit breaker para que, caso haja indisponibilidade do microsserviço de veículos, os dados do veículo sejam recuperados do cache no Redis.
+* Ao realizar uma venda, o microsserviço de loja se comunica com o microsserviço de veículos que recupera o veículo de um banco de dados PostgreSQL.
+* Implementação de um circuit breaker para que, caso haja indisponibilidade do microsserviço de veículos, os dados do veículo sejam recuperados do cache no Redis.
 * Os dados da venda gerada são armazenados em um tópico do Kafa para que o microsserviço de relatório possa consumi-los e gravá-los no MongoDB. Este microsserviço também possui um endpoint que retona todas as vendas realizadas.
 * Todos os microsserviços se registram no Consul (service discovery) permitindo que a comunicação entre eles seja dinâmica.
-* Foi implementada também uma api-gateway alocada na porta 9090 com balanceamento de carga para acessar todos os microsserviços.
+* Implementação de uma api-gateway alocada com balanceamento de carga para acessar todos os microsserviços.
 
 ## Arquitetura de Microserviços
 
@@ -45,9 +45,9 @@
 * Requisição GET
 	- http://localhost:9090/relatorio-service/vendas
 
-### Todos os microsserviçoes e aplicações estão em uma rede docker.
 
 ## Instruções
+#### Todos os microsserviçoes e aplicações estão em uma rede docker.
 
 ### Criando rede no docker:
 
@@ -71,7 +71,7 @@ docker exec -it ms-redis redis-cli
 ### Criando imagem Mongo no Docker:
 
 ```
-docker run -p 27017:27017 --name ms-mongo --network micronaut-net -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=e296cd9f mongo
+docker run -d -p 27017:27017 --name ms-mongo --network micronaut-net -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=e296cd9f mongo
 docker run -it --rm --network micronaut-net mongo mongo --host ms-mongo -u root -p e296cd9f --authenticationDatabase admin vendas
 ```
 
@@ -92,26 +92,26 @@ docker run -d --network micronaut-net -p 8500:8500 --name ms-consul consul
 
 ```
 docker build -t api-gateway:v1 .
-docker run -p 9090:9090 --name api-gateway --network micronaut-net api-gateway:v1
+docker run -d -p 9090:9090 --name api-gateway --network micronaut-net api-gateway:v1
 ```
 
 ### Criando imagem veiculo-service no Docker:
 
 ```
 docker build -t veiculo-service:v1 .
-docker run -P --network micronaut-net veiculo-service:v1
+docker run -d -P --network micronaut-net veiculo-service:v1
 ```
 
 ### Criando imagem loja-service no Docker:
 
 ```
 docker build -t loja-service:v1 .
-docker run -P --network micronaut-net loja-service:v1
+docker run -d -P --network micronaut-net loja-service:v1
 ```
 
 ### Criando imagem relatorio-service no Docker:
 
 ```
 docker build -t relatorio-service:v1 .
-docker run -P --network micronaut-net relatorio-service:v1
+docker run -d -P --network micronaut-net relatorio-service:v1
 ```
