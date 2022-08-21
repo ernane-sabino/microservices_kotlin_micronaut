@@ -2,16 +2,16 @@ micronaut:
   application:
     name: lojaService
   server:
-    port: 8081
+    port: -1
 netty:
   default:
     allocator:
       max-order: 3
 kafka:
   bootstrap:
-    servers: localhost:9092
+    servers: kafka-server:9092
 consul:
   client:
     registration:
       enabled: true
-    defaultZone: "localhost:8500"
+    defaultZone: "ms-consul:8500"

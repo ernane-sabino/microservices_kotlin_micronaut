@@ -1,5 +1,6 @@
 package br.com.curso.service
 
+import br.com.curso.config.Conexao
 import br.com.curso.dto.output.Veiculo
 import br.com.curso.http.VeiculoHttp
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -20,8 +21,7 @@ class VeiculoService(
     }
 
     fun gravarCache(veiculo: Veiculo) {
-        val jedisPool = JedisPool(JedisPoolConfig(), "127.0.0.1", 6379)
-        val jedis = jedisPool.resource
+        var jedis = Conexao.getConexao()
         var veiculoJSON = objectMapper.writeValueAsString(veiculo)
         jedis.set(veiculo.id.toString(), veiculoJSON)
     }
