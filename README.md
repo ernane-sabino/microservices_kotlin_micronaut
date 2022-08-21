@@ -6,7 +6,11 @@
 * Todos os microsserviços se registram no Consul (service discovery) permitindo que a comunicação entre eles seja dinâmica.
 * Foi implementada também uma api-gateway alocada na porta 9090 com balanceamento de carga para acessar todos os microsserviços.
 
-## Exemplo de solicitações utilizadas:
+## Arquitetura de Microserviços
+
+![image](https://user-images.githubusercontent.com/59898958/138009488-ee7427b5-b824-41c2-adf4-084954ded4de.png)
+
+### Exemplo de solicitações utilizadas:
 
 * Cadastro de novo veículo - Microsserviço Veículos
 	- Requisição POST
@@ -41,11 +45,7 @@
 	- Requisição GET
 		- http://localhost:9090/relatorio-service/vendas
 
-## Todos os microsserviçoes e aplicações estão em uma rede docker.
-
-## Arquitetura de Microserviços
-
-![image](https://user-images.githubusercontent.com/59898958/138009488-ee7427b5-b824-41c2-adf4-084954ded4de.png)
+### Todos os microsserviçoes e aplicações estão em uma rede docker.
 
 ## Instruções
 
