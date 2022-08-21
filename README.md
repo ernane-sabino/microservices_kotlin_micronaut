@@ -1,10 +1,10 @@
-## Sobre este porjeto
+## Sobre este projeto
 
-Ao realizar uma venda, o microsserviço de loja se comunica com o microsserviço de veículos que recupera o veículo de um banco de dados PostgreSQL
-Foi implementado um circuit breaker para que, caso haja indisponibilidade do microsserviço de veículos, os dados do veículo sejam recuperados do cache no Redis.
-Os dados da venda gerada são armazenados em um tópico do Kafa para que o microsserviço de relatório possa consumi-los e gravá-los no MongoDB. Este microsserviço também possui um endpoint que retona todas as vendas realizadas.
-Todos os microsserviços se registram no Consul (service discovery) permitindo que a comunicação entre eles seja dinâmica.
-Foi implementada também uma api-gateway alocada na porta 9090 com balanceamento de carga para acessar todos os microsserviços.
+* Ao realizar uma venda, o microsserviço de loja se comunica com o microsserviço de veículos que recupera o veículo de um banco de dados PostgreSQL
+* Foi implementado um circuit breaker para que, caso haja indisponibilidade do microsserviço de veículos, os dados do veículo sejam recuperados do cache no Redis.
+* Os dados da venda gerada são armazenados em um tópico do Kafa para que o microsserviço de relatório possa consumi-los e gravá-los no MongoDB. Este microsserviço também possui um endpoint que retona todas as vendas realizadas.
+* Todos os microsserviços se registram no Consul (service discovery) permitindo que a comunicação entre eles seja dinâmica.
+* Foi implementada também uma api-gateway alocada na porta 9090 com balanceamento de carga para acessar todos os microsserviços.
 
 Exemplo de solicitações utilizadas:
 
