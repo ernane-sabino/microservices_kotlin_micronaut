@@ -1,5 +1,6 @@
 ## Sobre este projeto
 
+Este projeto exemplifica a implementação de microsserviços utilizando Kotlin com Micronaut e simula a realização de vendas de veículos por uma loja que se apresenta da deguinte forma:
 * Ao realizar uma venda, o microsserviço de loja se comunica com o microsserviço de veículos que recupera o veículo de um banco de dados PostgreSQL.
 * Implementação de um circuit breaker para que, caso haja indisponibilidade do microsserviço de veículos, os dados do veículo sejam recuperados do cache no Redis.
 * Os dados da venda gerada são armazenados em um tópico do Kafa para que o microsserviço de relatório possa consumi-los e gravá-los no MongoDB. Este microsserviço também possui um endpoint que retona todas as vendas realizadas.
