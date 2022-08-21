@@ -10,42 +10,6 @@
 
 ![image](https://user-images.githubusercontent.com/59898958/138009488-ee7427b5-b824-41c2-adf4-084954ded4de.png)
 
-### Exemplo de solicitações utilizadas:
-
-#### Cadastro de novo veículo - Microsserviço Veículos
-* Requisição POST
-	- http://localhost:9090/veiculo-service/veiculos
-* Dados da requisição:
-```
-{
-	"marca": "string",
-	"modelo": "string",
-	"placa": "string"
-}
-```
-
-### Recuperação de veículos cadastrados - Microsserviço Veículos
-* Requisição GET
-	- http://localhost:9090/veiculo-service/veiculos/{id}
-
-### Efetuar uma venda - Microsserviço Loja
-* Requisição POST
-	- http://localhost:9090/loja-service/vendas
-* Dados da requisição:
-```
-{
-	"cliente": "string",
-	"veiculo": int {id do veiculo},
-	"valor": decimal,
-	"quantidadeParcelas": int
-}
-```
-
-### Listagem das vendas realizadas - Microsserviço Relatório
-* Requisição GET
-	- http://localhost:9090/relatorio-service/vendas
-
-
 ## Instruções
 #### Todos os microsserviçoes e aplicações estão em uma rede docker.
 
@@ -115,3 +79,37 @@ docker run -d -P --network micronaut-net loja-service:v1
 docker build -t relatorio-service:v1 .
 docker run -d -P --network micronaut-net relatorio-service:v1
 ```
+## Exemplo de solicitações utilizadas:
+
+#### Cadastro de novo veículo - Microsserviço Veículos
+* Requisição POST
+	- http://localhost:9090/veiculo-service/veiculos
+* Dados da requisição:
+```
+{
+	"marca": "string",
+	"modelo": "string",
+	"placa": "string"
+}
+```
+
+### Recuperação de veículos cadastrados - Microsserviço Veículos
+* Requisição GET
+	- http://localhost:9090/veiculo-service/veiculos/{id}
+
+### Efetuar uma venda - Microsserviço Loja
+* Requisição POST
+	- http://localhost:9090/loja-service/vendas
+* Dados da requisição:
+```
+{
+	"cliente": "string",
+	"veiculo": int {id do veiculo},
+	"valor": decimal,
+	"quantidadeParcelas": int
+}
+```
+
+### Listagem das vendas realizadas - Microsserviço Relatório
+* Requisição GET
+	- http://localhost:9090/relatorio-service/vendas
