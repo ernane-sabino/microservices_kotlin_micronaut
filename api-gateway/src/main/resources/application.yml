@@ -2,12 +2,12 @@ micronaut:
   application:
     name: apiGateway
   server:
-    port: 9999
+    port: 9090
   config-client:
     enabled: true
 consul:
   client:
-    defaultZone: ${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}
+    defaultZone: "ms-consul:8500"
     registration:
       enabled: true
 gateway:
