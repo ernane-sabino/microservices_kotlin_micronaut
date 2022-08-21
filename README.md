@@ -105,7 +105,7 @@ docker run -d -P --network micronaut-net relatorio-service:v1
 ```
 {
 	"cliente": "string",
-	"veiculo": int {id do veiculo},
+	"veiculo": int, //id do veículo
 	"valor": decimal,
 	"quantidadeParcelas": int
 }
