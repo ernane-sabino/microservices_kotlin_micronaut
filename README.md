@@ -80,7 +80,7 @@ docker run -d -P --network micronaut-net loja-service:v1
 docker build -t relatorio-service:v1 .
 docker run -d -P --network micronaut-net relatorio-service:v1
 ```
-## Exemplo de solicitações utilizadas:
+## Exemplos de solicitações utilizadas:
 
 #### Cadastro de novo veículo - Microsserviço Veículos
 * Requisição POST
