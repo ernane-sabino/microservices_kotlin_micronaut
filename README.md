@@ -12,10 +12,10 @@
 
 ### Exemplo de solicitações utilizadas:
 
-* Cadastro de novo veículo - Microsserviço Veículos
-	- Requisição POST
-		- http://localhost:9090/veiculo-service/veiculos
-	- Dados da requisição:
+#### Cadastro de novo veículo - Microsserviço Veículos
+* Requisição POST
+	** http://localhost:9090/veiculo-service/veiculos
+* Dados da requisição:
 ```
 {
 	"marca": "string",
@@ -85,7 +85,7 @@ docker run -d --name kafka-server --network micronaut-net -e ALLOW_PLAINTEXT_LIS
 ### Criando imagem Consul no Docker:
 
 ```
-docker run --network micronaut-net -p 8500:8500 --name ms-consul consul
+docker run -d --network micronaut-net -p 8500:8500 --name ms-consul consul
 ```
 
 ### Criando imagem gateway no Docker:
